@@ -26,6 +26,6 @@ jobs:
           tags: ${{ secrets.DOCKER_REGISTRY }}/lwjerri/findid:latest
       - name: Start Deployment
         run: |
-          cd /root/services/FindID
+          cd /root/services/findid
           docker compose pull
           docker compose up -d
