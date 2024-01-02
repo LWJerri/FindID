@@ -77,7 +77,7 @@ export default function App() {
                 placeholder="tsX02seph9f"
                 type="text"
                 value={scannedValue}
-                onChange={(e) => setScannedValue(e.target.value)}
+                onChange={(e) => setScannedValue(e.target.value.replace(/ /g, ""))}
                 onKeyDown={handleEnterKey}
               />
             </div>
