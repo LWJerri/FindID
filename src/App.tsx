@@ -48,7 +48,7 @@ export default function App() {
     <main className={`flex items-center justify-center min-h-screen ${backgroundColor}`}>
       <Card className="w-full max-w-md mx-4 my-5 bg-white shadow-md">
         <CardHeader>
-          <h2 className="text-2xl select-none flex justify-center space-x-2 items-center font-bold">
+          <h2 className="text-2xl flex justify-center space-x-2 items-center font-bold">
             <img src="shipit.png" className="w-8 h-8" alt="SHIPIT" />
 
             <p>FindID</p>
@@ -58,9 +58,7 @@ export default function App() {
         <CardContent>
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="source" className="select-none">
-                A list of IDs to be found
-              </Label>
+              <Label htmlFor="source">A list of IDs to be found</Label>
 
               <Textarea
                 id="source"
@@ -72,9 +70,7 @@ export default function App() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="scanned" className="select-none">
-                Scanned ID
-              </Label>
+              <Label htmlFor="scanned">Scanned ID</Label>
 
               <Input
                 id="scanned"
@@ -86,15 +82,15 @@ export default function App() {
               />
             </div>
 
-            <Button className="w-full select-none" onClick={handleScanButton}>
+            <Button className="w-full" onClick={handleScanButton}>
               Find
             </Button>
 
             <div className="flex justify-between">
-              <p className="text-xs text-gray-500 select-none">Made with ❤️ by kuhandri</p>
+              <p className="text-xs text-gray-500">Made with ❤️ by kuhandri</p>
 
               <a
-                className="text-xs text-gray-500 hover:underline select-none"
+                className="text-xs text-gray-500 hover:underline"
                 href="https://github.com/LWJerri/FindID"
                 target="_blank"
               >
