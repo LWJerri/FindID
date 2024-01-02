@@ -36,7 +36,7 @@ export default function App() {
 		<main className={`flex items-center justify-center h-screen ${backgroundColor}`}>
 			<Card className="w-full max-w-md mx-4">
 				<CardHeader>
-					<h2 className="text-2xl font-semibold text-center">FindID | Container & Items</h2>
+					<h2 className="text-2xl font-semibold text-center">FindID | Containers & Items</h2>
 				</CardHeader>
 
 				<CardContent>
@@ -69,6 +69,14 @@ export default function App() {
 						<Button className="w-full" onClick={handleScanButtonClick}>
 							Compare
 						</Button>
+
+						<div className="flex justify-between">
+							<p className="text-xs text-gray-500">Made with ❤️ by kuhandri</p>
+
+							<a className="text-xs text-gray-500" href="https://github.com/LWJerri/FindID" target="_blank">
+								Source code
+							</a>
+						</div>
 					</div>
 				</CardContent>
 			</Card>
