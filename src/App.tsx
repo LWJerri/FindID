@@ -6,80 +6,104 @@ import { useState } from "react";
 import { Textarea } from "./components/ui/textarea";
 
 export default function App() {
-	const [sourceValue, setSourceValue] = useState("");
-	const [scannableValue, setScannableValue] = useState("");
-	const [backgroundColor, setBackgroundColor] = useState("bg-gray-200");
+  const [sourceValue, setSourceValue] = useState("");
+  const [scannedValue, setScannedValue] = useState("");
+  const [backgroundColor, setBackgroundColor] = useState("bg-slate-200");
 
-	const handleScanButtonClick = () => {
-		if (!sourceValue || !scannableValue) return;
+  const handleScanButton = () => {
+    if (!sourceValue || !scannedValue) return;
 
-		setScannableValue("");
+    const sourceValueIDs = sourceValue.match(scannedValue);
 
-		document.getElementById("scannable")?.focus();
+    if (sourceValueIDs) {
+      setBackgroundColor("bg-green-200");
 
-		if (sourceValue.split(",").includes(scannableValue)) {
-			setBackgroundColor("bg-green-200");
+      new Audio("song.mp3").play();
+    } else {
+      setBackgroundColor("bg-red-200");
+    }
 
-			new Audio("song.mp3").play();
-		} else {
-			setBackgroundColor("bg-red-200");
-		}
-	};
+    setScannedValue("");
 
-	const handleEnterPress = (e: { key: string }) => {
-		if (e.key === "Enter") {
-			handleScanButtonClick();
-		}
-	};
+    document.getElementById("scanned")!.focus();
+  };
 
-	return (
-		<main className={`flex items-center justify-center h-screen ${backgroundColor}`}>
-			<Card className="w-full max-w-md mx-4">
-				<CardHeader>
-					<h2 className="text-2xl font-semibold text-center">FindID | Containers & Items</h2>
-				</CardHeader>
+  const handleEnterKey = (e: { key: string }) => {
+    if (e.key !== "Enter") return;
 
-				<CardContent>
-					<div className="space-y-4">
-						<div className="space-y-2">
-							<Label htmlFor="source">A list of IDs to be found</Label>
+    handleScanButton();
+  };
 
-							<Textarea
-								id="source"
-								placeholder="B0BZHCQ6PF,B0CHBRJCDV"
-								value={sourceValue}
-								onChange={(e) => setSourceValue(e.target.value.replace(/ /g, ""))}
-								onKeyPress={handleEnterPress}
-							/>
-						</div>
+  const sourceArea = document.getElementById("source");
 
-						<div className="space-y-2">
-							<Label htmlFor="scannable">Current ID</Label>
+  if (sourceArea) {
+    sourceArea.oninput = function () {
+      sourceArea.style.height = "";
 
-							<Input
-								id="scannable"
-								placeholder="B0CHBRJCDV"
-								type="text"
-								value={scannableValue}
-								onChange={(e) => setScannableValue(e.target.value.replace(/ /g, ""))}
-								onKeyPress={handleEnterPress}
-							/>
-						</div>
+      sourceArea.style.height = sourceArea.scrollHeight + 5 + "px";
+    };
+  }
 
-						<Button className="w-full" onClick={handleScanButtonClick}>
-							Compare
-						</Button>
+  return (
+    <main className={`flex items-center justify-center min-h-screen ${backgroundColor}`}>
+      <Card className="w-full max-w-md mx-4 my-5 bg-white shadow-md">
+        <CardHeader>
+          <h2 className="text-2xl select-none flex justify-center space-x-2 items-center font-bold">
+            <img src="shipit.png" className="w-8 h-8" alt="SHIPIT" />
 
-						<div className="flex justify-between">
-							<p className="text-xs text-gray-500">Made with ❤️ by kuhandri</p>
+            <p>FindID</p>
+          </h2>
+        </CardHeader>
 
-							<a className="text-xs text-gray-500" href="https://github.com/LWJerri/FindID" target="_blank">
-								Source code
-							</a>
-						</div>
-					</div>
-				</CardContent>
-			</Card>
-		</main>
-	);
+        <CardContent>
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="source" className="select-none">
+                A list of IDs to be found
+              </Label>
+
+              <Textarea
+                id="source"
+                placeholder="It can be just one code or a list of codes or message with codes from Chime"
+                value={sourceValue}
+                onChange={(e) => setSourceValue(e.target.value)}
+                onKeyDown={handleEnterKey}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="scanned" className="select-none">
+                Scanned ID
+              </Label>
+
+              <Input
+                id="scanned"
+                placeholder="tsX02seph9f"
+                type="text"
+                value={scannedValue}
+                onChange={(e) => setScannedValue(e.target.value)}
+                onKeyDown={handleEnterKey}
+              />
+            </div>
+
+            <Button className="w-full select-none" onClick={handleScanButton}>
+              Find
+            </Button>
+
+            <div className="flex justify-between">
+              <p className="text-xs text-gray-500 select-none">Made with ❤️ by kuhandri</p>
+
+              <a
+                className="text-xs text-gray-500 hover:underline select-none"
+                href="https://github.com/LWJerri/FindID"
+                target="_blank"
+              >
+                Source code
+              </a>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </main>
+  );
 }
