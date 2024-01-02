@@ -3,7 +3,7 @@ version: "3.8"
 services:
   findid:
     restart: always
-    image: registry.main.lwjerri.dev/lwjerri/findid
+    image: registry.main.lwjerri.dev/lwjerri/findid:latest
     networks:
       - caddy
     labels:
