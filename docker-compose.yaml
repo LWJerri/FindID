@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  findid:
+    restart: always
+    image: findid
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - caddy
+    labels:
+      caddy: findid.main.lwjerri.dev
+      caddy.reverse_proxy: "{{upstreams 8080}}"
+
+networks:
+  caddy:
+    external: true
