@@ -51,11 +51,6 @@
       "windows": {
         "digestAlgorithm": "sha256",
         "allowDowngrades": false,
-        "wix": {
-          "language": "en-US",
-          "license": "MIT",
-          "enableElevatedUpdateTask": true
-        },
         "nsis": {
           "license": "MIT",
           "headerImage": "icons/Square310x310Logo.png",
