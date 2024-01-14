@@ -21,9 +21,7 @@ export function ExtractIdTab() {
 
     const getDataFromSource = sourceValue.match(AVAILABLE_CHOICES[value].regexp);
 
-    if (getDataFromSource?.length) {
-      setExtractedValues(getDataFromSource);
-    }
+    setExtractedValues(getDataFromSource?.length ? [...new Set(getDataFromSource)] : []);
   };
 
   return (
@@ -60,11 +58,13 @@ export function ExtractIdTab() {
         </div>
 
         <div className={`space-y-2 ${extractedValues.length ? "block" : "hidden"}`}>
-          <Label htmlFor="result">Result of extracting</Label>
+          <Label htmlFor="result">Result of extracting*</Label>
 
           <div id="result">
             <Markup content={extractedValues.join("<br />")} />
           </div>
+
+          <p className="text-xs text-gray-500">*Duplicate codes have been deleted</p>
         </div>
       </div>
     </CardContent>
