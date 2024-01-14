@@ -32,5 +32,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           releaseName: "FindID v__VERSION__"
+          tagName: "v__VERSION__"
           releaseDraft: true
           prerelease: false
