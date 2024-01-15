@@ -2,8 +2,8 @@ name: Build/Publish App & Release
 
 on:
   push:
-    branches:
-      - "production"
+    # branches:
+    #   - "production"
 
 jobs:
   build-and-publish:
@@ -31,7 +31,6 @@ jobs:
         id: tauri
         run: |
           echo "releaseId=137107991" >> "$GITHUB_OUTPUT"
-          echo ${{ steps.tauri.outputs.releaseId }}
       # - name: Build/Publish to GitHub
       #   uses: tauri-apps/tauri-action@v0
       #   id: tauri
