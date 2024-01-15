@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-publish:
     runs-on: windows-latest
+    outputs:
+      releaseId: ${{ steps.tauri.outputs.releaseId }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -47,7 +49,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run bash code
-        env:
-          RELEASE_ID: ${{ needs.build-and-publish.steps.tauri.outputs.releaseId }}
         run: |
           sh .github/scripts/latest.sh
+        env:
+          RELEASE_ID: ${{ needs.build-and-publish.outputs.releaseId }}
