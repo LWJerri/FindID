@@ -25,16 +25,19 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: Build/Publish to GitHub
-        uses: tauri-apps/tauri-action@v0
+      - name: test
         id: tauri
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
-          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-        with:
-          releaseName: "v__VERSION__ ⭐"
-          tagName: "v__VERSION__"
+        run: echo "releaseId=137107991" >> $GITHUB_OUTPUT
+      # - name: Build/Publish to GitHub
+      #   uses: tauri-apps/tauri-action@v0
+      #   id: tauri
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      #     TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+      #     TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+      #   with:
+      #     releaseName: "v__VERSION__ ⭐"
+      #     tagName: "v__VERSION__"
 
   updater-release:
     runs-on: ubuntu-latest
@@ -45,7 +48,6 @@ jobs:
 
       - name: Run bash code
         run: |
-          echo $RELEASE_ID
-          sh ./github/scripts/latest.sh
+          sh .github/scripts/latest.sh
         env:
           RELEASE_ID: ${{ needs.build-and-publish.steps.tauri.outputs.releaseId }}
