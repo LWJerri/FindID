@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run bash code
-        run: |
-          sh .github/scripts/latest.sh
         env:
           RELEASE_ID: ${{ needs.build-and-publish.steps.tauri.outputs.releaseId }}
+        run: |
+          sh .github/scripts/latest.sh
