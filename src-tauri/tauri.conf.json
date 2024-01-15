@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "package": {
-    "productName": "FindID"
+    "productName": "findid"
   },
   "build": {
     "devPath": "http://localhost:5173",
@@ -12,7 +12,7 @@
   "tauri": {
     "windows": [
       {
-        "label": "findid",
+        "label": "FindID",
         "fileDropEnabled": false,
         "center": true,
         "minWidth": 448,
@@ -23,25 +23,25 @@
     ],
     "bundle": {
       "active": true,
-      "targets": "all",
+      "targets": ["nsis", "updater", "msi"],
       "identifier": "ua.lwjerri.dev",
       "icon": [
-        "icons/32x32.png",
         "icons/128x128.png",
         "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico",
-        "icons/icon.png",
-        "icons/Square30x30Logo.png",
-        "icons/Square44x44Logo.png",
-        "icons/Square71x71Logo.png",
-        "icons/Square89x89Logo.png",
+        "icons/32x32.png",
         "icons/Square107x107Logo.png",
         "icons/Square142x142Logo.png",
         "icons/Square150x150Logo.png",
         "icons/Square284x284Logo.png",
+        "icons/Square30x30Logo.png",
         "icons/Square310x310Logo.png",
-        "icons/StoreLogo.png"
+        "icons/Square44x44Logo.png",
+        "icons/Square71x71Logo.png",
+        "icons/Square89x89Logo.png",
+        "icons/StoreLogo.png",
+        "icons/icon.icns",
+        "icons/icon.ico",
+        "icons/icon.png"
       ],
       "copyright": "LWJerri (lwjerri.dev)",
       "category": "Utility",
@@ -49,14 +49,10 @@
       "longDescription": "A simple application that makes it easy to find some container or product by ID.",
 
       "windows": {
-        "digestAlgorithm": "sha256",
         "allowDowngrades": false,
-        "nsis": {
-          "license": "MIT",
-          "headerImage": "icons/Square310x310Logo.png",
-          "installerIcon": "icons/Square310x310Logo.png",
-          "displayLanguageSelector": true
-        }
+        "certificateThumbprint": "E86CC5D5C23710A9AE06CBB430D10E0F21DFC320",
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "http://timestamp.sectigo.com"
       }
     },
     "updater": {
@@ -64,7 +60,7 @@
       "endpoints": [
         "https://github.com/LWJerri/FindID/releases/download/v{{current_version}}/findid_{{current_version}}_x64-setup.exe"
       ],
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQ5RDIzNjYzNTlBOTdBOEQKUldTTmVxbFpZemJTMmJONVhKSERiYk81cmpFS1llY2YvL3o0L3JlS0VVUERMZWVGd2lrY251dmgK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDcyOUU4ODYxRjExMjE3QzcKUldUSEZ4THhZWWllY25UK1ROMnVqbFQ4MjN3Zm9CUjQ1amNZeGJ2ekI2SFh0Z0RDc1RHV0FYTXMK"
     }
   }
 }
