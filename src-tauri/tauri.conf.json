@@ -10,6 +10,12 @@
     "beforeBuildCommand": "pnpm vite:build"
   },
   "tauri": {
+    "allowlist": {
+      "all": false,
+      "dialog": {
+        "ask": true
+      }
+    },
     "windows": [
       {
         "label": "FindID",
@@ -50,16 +56,12 @@
 
       "windows": {
         "allowDowngrades": false,
-        "certificateThumbprint": "E86CC5D5C23710A9AE06CBB430D10E0F21DFC320",
-        "digestAlgorithm": "sha256",
-        "timestampUrl": "http://timestamp.sectigo.com"
+        "digestAlgorithm": "sha256"
       }
     },
     "updater": {
       "active": true,
-      "endpoints": [
-        "https://github.com/LWJerri/FindID/releases/download/v{{current_version}}/findid_{{current_version}}_x64-setup.exe"
-      ],
+      "endpoints": ["https://github.com/LWJerri/FindID/blob/master/latest.json"],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDcyOUU4ODYxRjExMjE3QzcKUldUSEZ4THhZWWllY25UK1ROMnVqbFQ4MjN3Zm9CUjQ1amNZeGJ2ekI2SFh0Z0RDc1RHV0FYTXMK"
     }
   }

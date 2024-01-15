@@ -1,0 +1,11 @@
+{
+  "version": "v1.2.0",
+  "notes": "This is a test version release",
+  "pub_date": "2024-01-15T17:17:57.160Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZ4THhZWWllY3Qwblk3T1RoL3EwMVVZN2RJREZwMmRJZmowSkdLOFZFSmluTFVRVHRtcFNrRU5KckFqRFhGR09xMEJ6VFZ6d1dFczE4RzlHemNBZm5CQUw1UEtWd0FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzA1MzM3NTkxCWZpbGU6ZmluZGlkXzEuMi4wX3g2NC1zZXR1cC5leGUKTmRRWHNoUWp6Q0h5c3pTc2dVZ0RBQXc5OFZNQjBGaEw4ano0dmlrRHcyeDFvNGx1MWtxVTVkMkNRT05YWVhOeTNLQmR4U0g5NVZMUFFvdlJMRk9DQ3c9PQo=",
+      "url": "https://github.com/username/reponame/releases/download/v1.0.0/app-x64-setup.nsis.zip"
+    }
+  }
+}
