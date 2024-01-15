@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt-get install jq git -y
-
 echo $RELEASE_ID
 
 response=$(curl -s https://api.github.com/repos/LWJerri/FindID/releases/$RELEASE_ID)
