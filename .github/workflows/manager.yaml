@@ -29,7 +29,9 @@ jobs:
 
       - name: test
         id: tauri
-        run: echo "releaseId=137107991" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "releaseId=137107991" >> "$GITHUB_OUTPUT"
+          echo ${{ steps.tauri.outputs.releaseId }}
       # - name: Build/Publish to GitHub
       #   uses: tauri-apps/tauri-action@v0
       #   id: tauri
@@ -53,5 +55,6 @@ jobs:
         env:
           RELEASE_ID: ${{ needs.build-and-publish.outputs.releaseId }}
         run: |
+          echo $GITHUB_OUTPUT
           echo $RELEASE_ID
           sh .github/scripts/latest.sh
