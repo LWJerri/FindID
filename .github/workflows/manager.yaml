@@ -12,32 +12,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 20
-      # - run: |
-      #     corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: |
+          corepack enable
 
-      # - name: Install Rust
-      #   uses: dtolnay/rust-toolchain@stable
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
 
-      # - name: Install dependencies
-      #   run: pnpm i
+      - name: Install dependencies
+        run: pnpm i
 
-      - name: test
+      - name: Build/Publish to GitHub
+        uses: tauri-apps/tauri-action@v0
         id: tauri
-        run: echo "releaseId=137107991" >> $GITHUB_STATE
-      # - name: Build/Publish to GitHub
-      #   uses: tauri-apps/tauri-action@v0
-      #   id: tauri
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-      #     TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
-      #     TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-      #   with:
-      #     releaseName: "v__VERSION__ ⭐"
-      #     tagName: "v__VERSION__"
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+        with:
+          releaseName: "v__VERSION__ ⭐"
+          tagName: "v__VERSION__"
 
       - name: Run bash code
         shell: bash
