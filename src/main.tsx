@@ -1,3 +1,4 @@
+import { emit } from "@tauri-apps/api/event";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { onEventShowMenu } from "tauri-plugin-context-menu";
@@ -12,6 +13,12 @@ if (window?.__TAURI_METADATA__) {
 
         event() {
           location.reload();
+        },
+      },
+      {
+        label: "Check for updates",
+        async event() {
+          await emit("tauri://update");
         },
       },
     ],
