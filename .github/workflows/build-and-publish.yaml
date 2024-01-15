@@ -39,9 +39,10 @@ jobs:
           releaseDraft: true
           prerelease: false
 
-      - name: Update JSON
-        run: sh ../test.sh
-        env:
-          APP_VERSION: ${{ steps.build_and_publish.outputs.appVersion }}
-          RELEASE_HTML_URL: ${{ steps.build_and_publish.outputs.releaseHtmlUrl }}
-          RELEASE_UPLOAD_URL: ${{ steps.build_and_publish.outputs.releaseUploadUrl }}
+      - name: Generate JSON file for updater
+        run: |
+          echo "${{ steps.build_and_publish.outputs.appVersion }}, ${{ steps.build_and_publish.outputs.releaseHtmlUrl }} ${{ steps.build_and_publish.outputs.releaseUploadUrl }}" >> test.txt
+          git checkout production
+          git add test.txt
+          git commit -m "Add test file"
+          git push
