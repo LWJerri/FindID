@@ -1,6 +1,6 @@
 {
   "name": "findid",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A simple application that makes it easy to find some container or product by ID.",
   "type": "module",
   "scripts": {
