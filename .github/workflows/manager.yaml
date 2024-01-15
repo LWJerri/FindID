@@ -27,7 +27,7 @@ jobs:
 
       - name: test
         id: tauri
-        run: echo "releaseId=137107991" >> $GITHUB_OUTPUT
+        run: echo "releaseId=137107991" >> "$GITHUB_OUTPUT"
       # - name: Build/Publish to GitHub
       #   uses: tauri-apps/tauri-action@v0
       #   id: tauri
