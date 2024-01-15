@@ -28,6 +28,7 @@ jobs:
 
       - name: Build and publish with Tauri
         uses: tauri-apps/tauri-action@v0
+        id: build_and_publish
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
@@ -37,3 +38,10 @@ jobs:
           tagName: "latest"
           releaseDraft: true
           prerelease: false
+
+      - name: Update JSON
+        run: sh ../test.sh
+        env:
+          APP_VERSION: ${{ steps.build_and_publish.outputs.appVersion }}
+          RELEASE_HTML_URL: ${{ steps.build_and_publish.outputs.releaseHtmlUrl }}
+          RELEASE_UPLOAD_URL: ${{ steps.build_and_publish.outputs.releaseUploadUrl }}
