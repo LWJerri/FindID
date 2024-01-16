@@ -1,0 +1,59 @@
+name: Build/Publish App & Release latest.json
+
+on:
+  push:
+    branches:
+      - "production"
+
+jobs:
+  build-and-publish:
+    runs-on: windows-latest
+    name: Build/Publish App
+    outputs:
+      releaseId: ${{ steps.tauri.outputs.releaseId }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js & Enable corepack
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: corepack enable
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Run Tauri action
+        uses: tauri-apps/tauri-action@v0
+        id: tauri
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+        with:
+          releaseName: "v__VERSION__ ⭐"
+          tagName: "v__VERSION__"
+
+  release-latest:
+    runs-on: ubuntu-latest
+    name: Release latest.json
+    needs: build-and-publish
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run SH script
+        shell: bash
+        env:
+          RELEASE_ID: ${{ needs.build-and-publish.outputs.releaseId }}
+        run: sh .github/scripts/latest.sh
+
+      - name: Release latest.json
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "latest.json"
+          message: "Bump latest.json due new app release"
