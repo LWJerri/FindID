@@ -12,7 +12,3 @@ file_contents=$(cat $file_name)
 file_contents=$(echo "$file_contents" | sed 's/""/"Some new version notes..."/g')
 
 echo "$file_contents" > latest.json
-
-git add latest.json
-git commit -m "Update latest.json"
-git push

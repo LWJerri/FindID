@@ -44,12 +44,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run bash code
+      - name: Get latest release
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           RELEASE_ID: ${{ needs.build-and-publish.outputs.releaseId }}
-        run: |
-          git config --global user.email "${{ GITHUB.ACTOR }}@users.noreply.github.com"
-          git config --global user.name "${{ GITHUB.ACTOR }}"
-          sh .github/scripts/latest.sh
+        run: sh .github/scripts/latest.sh
+
+      - name: Upload latest release
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "latest.json"
+          message: "Update latest.json"
