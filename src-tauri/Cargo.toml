@@ -1,6 +1,6 @@
 [package]
 name = "findid"
-version = "2.1.1"
+version = "2.1.2"
 description = "An application for working with IDs of different types, designed to maximize productivity."
 authors = ["LWJerri"]
 license = "MIT"
