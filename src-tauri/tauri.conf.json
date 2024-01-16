@@ -23,8 +23,7 @@
         "center": true,
         "minWidth": 448,
         "minHeight": 533,
-        "title": "FindID - Working with various types of IDs",
-        "contentProtected": true
+        "title": "FindID - Working with various types of IDs"
       }
     ],
     "bundle": {
