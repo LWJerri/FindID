@@ -15,7 +15,7 @@ export function ExtractIdTab() {
     container: { name: "tsX Code", regexp: new RegExp(/tsX\w{8}/gm) }, //tsX12345678
     "b0-code": { name: "B0 Code", regexp: new RegExp(/B0.{8}/gm) }, // B0BZHFLKC2,
     "x001-code": { name: "X001 Code", regexp: new RegExp(/X001.{6}/gm) }, // X001ECK9T3
-    "dz-P-A": { name: "dzp-P-A Code", regexp: new RegExp(/dz-P-A\d{4}/gm) }, // dz-P-A1234
+    "dz-P-A": { name: "dz-P-A Code", regexp: new RegExp(/dz-P-A\d{4}/gm) }, // dz-P-A1234
   };
 
   const extractValues = (value: string) => {
