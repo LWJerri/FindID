@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "notes": "With every new version FindID is getting better for you.",
+  "pub_date": "2024-01-16T11:53:19.386Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZ4THhZWWllY3NpUlpMVVBncWl2bU83aHNRUjl3ckhGWWhSN01PZkd4VTJ4VU02NUFDZjVSTEljU3JLQ3Q0bWRyN2RwQThLc0xiTWJzNGxITFJod1JPZlB6OHBNWWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzA1NDA1OTk1CWZpbGU6ZmluZGlkXzIuMC4wX3g2NC1zZXR1cC5uc2lzLnppcAplM1dXOGRSRGxNcS9sN2k3ZXFNcjgwK0daNnpOL0Q2WFlyeklHVkdsTHpremd4SU9rTDRad3pCQTdva0Q2dVZoVVpVaTc3TmtSeUhreGF2bnZPdUNCdz09Cg==",
+      "url": "https://github.com/LWJerri/FindID/releases/download/v2.0.0/findid_2.0.0_x64-setup.nsis.zip"
+    }
+  }
+}
