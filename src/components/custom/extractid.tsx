@@ -11,8 +11,8 @@ export function ExtractIdTab() {
   const [extractedValues, setExtractedValues] = useState<Array<string>>([]);
 
   const AVAILABLE_CHOICES: { [key: string]: { regexp: RegExp; name: string } } = {
-    "pod-location": { name: "Pod Location", regexp: new RegExp(/P-\d-\w\d{3}\w\d{3}/gm) }, // P-A123A123
-    container: { name: "Container", regexp: new RegExp(/tsX\w{8}/gm) }, //tsX12345678
+    "pod-location": { name: "Pod Location", regexp: new RegExp(/P-\d-\w\d{3}\w\d{3}/gm) }, // P-1-A123A123
+    container: { name: "tsX Code", regexp: new RegExp(/tsX\w{8}/gm) }, //tsX12345678
     "b0-code": { name: "B0 Code", regexp: new RegExp(/B0.{8}/gm) }, // B0BZHFLKC2,
     "x001-code": { name: "X001 Code", regexp: new RegExp(/X001.{6}/gm) }, // X001ECK9T3
     "dz-P-A": { name: "dzp-P-A Code", regexp: new RegExp(/dz-P-A\d{4}/gm) }, // dz-P-A1234
