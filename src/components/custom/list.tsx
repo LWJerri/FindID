@@ -1,4 +1,5 @@
 import { NotebookText, Search } from "lucide-react";
+
 import { TabsList, TabsTrigger } from "../ui/tabs";
 
 export default function AppTabs() {
