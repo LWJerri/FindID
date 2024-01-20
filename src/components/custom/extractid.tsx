@@ -37,6 +37,7 @@ export function ExtractIdTab() {
     setExtractor(value);
 
     const getDataFromSource = sourceValue.match(AVAILABLE_CHOICES[value].regexp);
+
     if (!getDataFromSource) {
       return setExtractedValues([]);
     }
