@@ -28,7 +28,7 @@ export function FindIDTab({ bg }: Props) {
     if (sourceValueIDs) {
       bg("bg-green-200");
 
-      const audio = new Audio();
+      const audio = new Audio("song.wav");
       void audio.play();
     } else {
       bg("bg-red-200");
