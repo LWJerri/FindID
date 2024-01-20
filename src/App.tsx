@@ -1,12 +1,14 @@
+import { useState } from "react";
 import { Tabs, TabsContent } from "@radix-ui/react-tabs";
 import { emit } from "@tauri-apps/api/event";
-import { useState } from "react";
 import { onEventShowMenu } from "tauri-plugin-context-menu";
-import { ExtractIdTab } from "./components/custom/extractid";
-import { FindIDTab } from "./components/custom/findid";
-import Footer from "./components/custom/footer";
-import AppHeader from "./components/custom/header";
+import { clsx } from "clsx";
+
 import AppTabs from "./components/custom/list";
+import AppHeader from "./components/custom/header";
+import Footer from "./components/custom/footer";
+import { FindIDTab } from "./components/custom/findid";
+import { ExtractIdTab } from "./components/custom/extractid";
 import { Card } from "./components/ui/card";
 
 if (window?.__TAURI_METADATA__) {
@@ -32,12 +34,10 @@ if (window?.__TAURI_METADATA__) {
 export default function App() {
   const [backgroundColor, setBackgroundColor] = useState("bg-slate-200");
 
-  const updateBackgroundColor = (data: string) => {
-    setBackgroundColor(data);
-  };
+  const updateBackgroundColor = (data: string) => setBackgroundColor(data);
 
   return (
-    <main className={`flex items-center justify-center min-h-screen ${backgroundColor}`}>
+    <main className={clsx("flex items-center justify-center min-h-screen", backgroundColor)}>
       <Card className="w-full max-w-md my-5 bg-white shadow-md">
         <AppHeader />
 
