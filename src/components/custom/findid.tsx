@@ -15,7 +15,7 @@ export function FindIDTab({ bg }: Props) {
   const [scannedValue, setScannedValue] = useState("");
   const [previousScannedValue, setPreviousScannedValue] = useState("");
 
-  const scannedRef = useRef<HTMLDivElement>(null);
+  const scannedRef = useRef<HTMLInputElement>(null);
 
   const sourceId = useId();
   const scannedId = useId();
@@ -69,6 +69,7 @@ export function FindIDTab({ bg }: Props) {
           <Label htmlFor={scannedId}>Scanned ID</Label>
 
           <Input
+            ref={scannedRef}
             id={scannedId}
             placeholder={previousScannedValue}
             type="text"
