@@ -48,6 +48,7 @@ export function FindIDTab({ bg }: Props) {
   };
 
   const handleChangeSourceValue = (ev: ChangeEvent<HTMLTextAreaElement>) => setSourceValue(ev.target.value);
+
   const handleChangeScannedValue = (ev: ChangeEvent<HTMLInputElement>) => {
     setScannedValue(ev.target.value.replace(/ /g, ""));
   };
