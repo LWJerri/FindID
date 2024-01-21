@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { type ChangeEvent, type KeyboardEvent, useId, useRef, useState } from "react";
+
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { CardContent } from "../ui/card";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
-import { Textarea } from "../ui/textarea";
 
-export function FindIDTab({ bg }: { bg: Function }) {
+interface Props {
+  bg: (data: string) => void;
+}
+
+export function FindIDTab({ bg }: Props) {
   const [sourceValue, setSourceValue] = useState("");
   const [scannedValue, setScannedValue] = useState("");
   const [previousScannedValue, setPreviousScannedValue] = useState("");
+
+  const scannedRef = useRef<HTMLInputElement>(null);
+
+  const sourceId = useId();
+  const scannedId = useId();
 
   const handleScanButton = () => {
     if (!sourceValue || !scannedValue) return;
@@ -18,7 +28,8 @@ export function FindIDTab({ bg }: { bg: Function }) {
     if (sourceValueIDs) {
       bg("bg-green-200");
 
-      new Audio("song.wav").play();
+      const audio = new Audio("song.wav");
+      void audio.play();
     } else {
       bg("bg-red-200");
     }
@@ -26,35 +37,45 @@ export function FindIDTab({ bg }: { bg: Function }) {
     setPreviousScannedValue(scannedValue);
     setScannedValue("");
 
-    document.getElementById("scanned")!.focus();
+    if (!scannedRef.current) return;
+    scannedRef.current.focus();
   };
 
-  const handleEnterKey = (e: { key: string }) => {
-    if (e.key !== "Enter") return;
+  const handleEnterKey = (ev: KeyboardEvent<HTMLInputElement>) => {
+    if (ev.key !== "Enter") return;
 
     handleScanButton();
+  };
+
+  const handleChangeSourceValue = (ev: ChangeEvent<HTMLTextAreaElement>) => setSourceValue(ev.target.value);
+
+  const handleChangeScannedValue = (ev: ChangeEvent<HTMLInputElement>) => {
+    setScannedValue(ev.target.value.replace(/ /g, ""));
   };
 
   return (
     <CardContent>
       <div className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="source">Content that containts IDs*</Label>
+          <Label htmlFor={sourceId}>Content that contains IDs*</Label>
 
-          <Textarea id="source" value={sourceValue} onChange={(e) => setSourceValue(e.target.value)} />
+          <Textarea id={sourceId} value={sourceValue} onChange={handleChangeSourceValue} />
 
-          <p className="text-xs text-gray-500">*For example, it could be one or more codes or a message from Chime.</p>
+          <p className="text-xs text-gray-500">
+            *For example, it could be one or more codes or a message from Chime.
+          </p>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="scanned">Scanned ID</Label>
+          <Label htmlFor={scannedId}>Scanned ID</Label>
 
           <Input
-            id="scanned"
+            ref={scannedRef}
+            id={scannedId}
             placeholder={previousScannedValue}
             type="text"
             value={scannedValue}
-            onChange={(e) => setScannedValue(e.target.value.replace(/ /g, ""))}
+            onChange={handleChangeScannedValue}
             onKeyDown={handleEnterKey}
           />
         </div>
