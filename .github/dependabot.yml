@@ -14,4 +14,3 @@ updates:
     directory: "/src-tauri/" # Location of package manifests
     schedule:
       interval: "daily"
-    versioning-strategy: increase-if-necessary
