@@ -10,3 +10,7 @@ updates:
     schedule:
       interval: "daily"
     versioning-strategy: increase-if-necessary
+  - package-ecosystem: "cargo" # See documentation for possible values
+    directory: "/src-tauri/" # Location of package manifests
+    schedule:
+      interval: "daily"
