@@ -12,7 +12,7 @@ This app is designed specifically for Amazon's FC warehouses and is meant to red
 ### Web Variant
 
 1. Run `pnpm vite:dev` to run app in dev mode, now you can do what you want and immediately see result.
-2. Run `pnpm vite:build & pnpm vite:preview` to run app in preview mode aka. production variant.
+2. Run `pnpm vite:build && pnpm vite:preview` to run app in preview mode aka. production variant.
 
 ### App Variant
 
