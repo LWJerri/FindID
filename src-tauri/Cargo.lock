@@ -3183,9 +3183,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-context-menu"
-version = "0.7.0"
+version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "408c121f5a61ef57b6246f87ef6205a9602efffd1c2db8fd5d696f61b055fac2"
+checksum = "2b8afd632ae9da2f48cc172890de2fa0b9a3dbeed514d04d5e42df839d81835a"
 dependencies = [
  "cocoa",
  "dispatch",
