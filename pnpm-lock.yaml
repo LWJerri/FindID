@@ -30,8 +30,8 @@ dependencies:
     specifier: ^13.1.0
     version: 13.1.0(react@18.3.0)
   lucide-react:
-    specifier: ^0.373.0
-    version: 0.373.0(react@18.3.0)
+    specifier: ^0.376.0
+    version: 0.376.0(react@18.3.0)
   react:
     specifier: ^18.2.0
     version: 18.3.0
@@ -1053,6 +1053,15 @@ packages:
     dev: true
     optional: true
 
+  /@tauri-apps/cli-darwin-x64@1.5.12:
+    resolution: {integrity: sha512-hSz9cuHO4lYora0z2XRFEIblkStT3eJvh/iYmsFfjT3usGBt2fTPMJ4SnL1Uyu64Y59dqyRNBikuBuymAFESjA==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
   /@tauri-apps/cli-linux-arm-gnueabihf@1.5.12:
     resolution: {integrity: sha512-FanE15/c7nz64CcTFe7f+8b7+rFQCb3Ivju+4sxVSPkAOJXHc5no3Y/LxFt85SAOMgPTB2FMuxHUdjvLjd2D1w==}
     engines: {node: '>= 10'}
@@ -1131,6 +1140,7 @@ packages:
     hasBin: true
     optionalDependencies:
       '@tauri-apps/cli-darwin-arm64': 1.5.12
+      '@tauri-apps/cli-darwin-x64': 1.5.12
       '@tauri-apps/cli-linux-arm-gnueabihf': 1.5.12
       '@tauri-apps/cli-linux-arm64-gnu': 1.5.12
       '@tauri-apps/cli-linux-arm64-musl': 1.5.12
@@ -1641,8 +1651,8 @@ packages:
       yallist: 3.1.1
     dev: true
 
-  /lucide-react@0.373.0(react@18.3.0):
-    resolution: {integrity: sha512-0kygFhk/DmK4mi+zf1t5mNStJQGaElACZdDdLiHOHFJzi7g3maC3SR86AcaUsxvDkZPId3XCd4vRngnjkPHu3Q==}
+  /lucide-react@0.376.0(react@18.3.0):
+    resolution: {integrity: sha512-g91IX3ERD6yUR1TL2dsL4BkcGygpZz/EsqjAeL/kcRQV0EApIOr/9eBfKhYOVyQIcGGuotFGjF3xKLHMEz+b7g==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
