@@ -19,7 +19,7 @@ dependencies:
     version: 1.0.4(@types/react-dom@18.3.0)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
   '@tauri-apps/api':
     specifier: ^1.5.3
-    version: 1.5.4
+    version: 1.5.5
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -1039,8 +1039,8 @@ packages:
     dev: true
     optional: true
 
-  /@tauri-apps/api@1.5.4:
-    resolution: {integrity: sha512-LKYae9URbdEdbHrOXBeXb/lZgVyWTX0E98rSFBuQlmkLr8OeG+akuE41PfLjBVyk1Q+fq7wxo4ieenLSMUAUhA==}
+  /@tauri-apps/api@1.5.5:
+    resolution: {integrity: sha512-Jgwj8BK/9YXZNzcqVDk1Al7+u5V9sWrZ8MhV41A1AKgJaicHuqlkc/qdx06sNDXvc+qprTPpBAaqnt891qOUIQ==}
     engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
     dev: false
 
@@ -2025,7 +2025,7 @@ packages:
   /tauri-plugin-context-menu@0.7.0:
     resolution: {integrity: sha512-NtFyhP2lQrUqs2ZWxw5j75p0K/3+5xPAckKh8yvpn0Bjq6WpKpBRli5chmcP44ltUoHBfXl2yRnpU14G1G5ucg==}
     dependencies:
-      '@tauri-apps/api': 1.5.4
+      '@tauri-apps/api': 1.5.5
     dev: false
 
   /thenify-all@1.6.0:
