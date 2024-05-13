@@ -1,6 +1,6 @@
 {
   "name": "findid",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "An application for working with IDs of different types, designed to maximize productivity.",
   "type": "module",
   "scripts": {
