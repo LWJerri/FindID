@@ -1,11 +1,11 @@
 {
-  "version": "2.1.4",
+  "version": "2.1.5",
   "notes": "With every new version FindID is getting better for you.",
-  "pub_date": "2024-02-23T13:06:33.255Z",
+  "pub_date": "2024-05-13T00:46:34.777Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZ4THhZWWllY2svZ1BsbHliN1FRZ2hMNmFORXM4TXdzWXFudEhPait6dm15ZjNmQmR1N2U1YlowKy9Kc1NKVXQwbENWOGpVMFdHVXN6b1B0Z2lZaWQ0WmszUHY4VndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzA4NjkzNTkwCWZpbGU6ZmluZGlkXzIuMS40X3g2NC1zZXR1cC5uc2lzLnppcAorVkdadzFvWUVBdUR0WWNad2JLQm9zVDU0K0lFeUVZMVg5eUh4emxpRlVTY1p1a2VVNFlJNHdLYVhOcVVKb3VoRGplY2ZyRFVHd2lpREJqNVlUVzREUT09Cg==",
-      "url": "https://github.com/LWJerri/FindID/releases/download/v2.1.4/findid_2.1.4_x64-setup.nsis.zip"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZ4THhZWWllY21xV2svVk0wTTRrc0pvbEkrOU85V2RVb1FwRERYMHBnL0dFN2kyRitzWGFyQitIcG10ZXdqL2VLTUNQM1Fpd2VwaTI2OEtYRmUrWVR4QXRQYlN1MXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE1NTYxMTkxCWZpbGU6ZmluZGlkXzIuMS41X3g2NC1zZXR1cC5uc2lzLnppcApONkMvcS82WDdOZ2NoR1F4RmRGMzVrUUx3WGo2QlI1c1BIQTJxOWZHd3I2dnBOeTRpUG9ZMWtmSzJBRzQ0NU5UYlZOWEhHU0RBWHFQSE5jM2NPcHFCZz09Cg==",
+      "url": "https://github.com/LWJerri/FindID/releases/download/v2.1.5/findid_2.1.5_x64-setup.nsis.zip"
     }
   }
 }
